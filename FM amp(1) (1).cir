@@ -1,0 +1,23 @@
+* \\homefs03\home\zo12\Praxis\FM amp(1) (1).sch
+
+* Schematics Version 8.0 - July 1997
+* Tue Nov 13 16:50:32 2018
+
+
+
+** Analysis setup **
+.tran 200ns 5ms 0 100ns
+
+
+* From [SCHEMATICS NETLIST] section of msim.ini:
+.lib "Q:\Pspice_8.eps\lib\LM386.lib"
+.lib "nom.lib"
+
+.INC "FM amp(1) (1).net"
+.INC "FM amp(1) (1).als"
+
+
+.probe
+
+
+.END

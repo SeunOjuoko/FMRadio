@@ -1,0 +1,175 @@
+
+**** 11/13/118 16:50:44 ******** NT Evaluation PSpice (July 1997) ************
+
+ * \\homefs03\home\zo12\Praxis\FM amp(1) (1).sch
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+* Schematics Version 8.0 - July 1997
+* Tue Nov 13 16:50:32 2018
+
+
+
+** Analysis setup **
+.tran 200ns 5ms 0 100ns
+
+
+* From [SCHEMATICS NETLIST] section of msim.ini:
+.lib "Q:\Pspice_8.eps\lib\LM386.lib"
+.lib "nom.lib"
+
+.INC "FM amp(1) (1).net"
+
+**** INCLUDING "FM amp(1) (1).net" ****
+* Schematics Netlist *
+
+
+
+C_C9         $N_0001 $N_0002  47n  
+C_C8         $N_0002 $N_0003  220u  
+C_C5         $N_0004 $N_0005  100n  
+C_C6         0 $N_0006  1n  
+R_R2         0 $N_0001  10  
+R_R6         0 $N_0007  1g  
+R_R4         $N_0004 $N_0008  22k  
+V_V27         $N_0005 0  
++SIN 0 10mv 1000 0 0 0
+X_U2         $N_0009 0 $N_0006 0 $N_0002 $N_0010 $N_0007 $N_0011 LM386
+R_RV2a         $N_0006 $N_0008  5k  
+R_RV2b         0 $N_0006  5k  
+C_C7         $N_0009 $N_0011  10u  
+V_Bat1         $N_0010 0 9V
+R_LS1         0 $N_0003  1.825  
+
+**** RESUMING "FM amp(1) (1).cir" ****
+.INC "FM amp(1) (1).als"
+
+
+
+**** INCLUDING "FM amp(1) (1).als" ****
+* Schematics Aliases *
+
+.ALIASES
+C_C9            C9(1=$N_0001 2=$N_0002 )
+C_C8            C8(1=$N_0002 2=$N_0003 )
+C_C5            C5(1=$N_0004 2=$N_0005 )
+C_C6            C6(1=0 2=$N_0006 )
+R_R2            R2(1=0 2=$N_0001 )
+R_R6            R6(1=0 2=$N_0007 )
+R_R4            R4(1=$N_0004 2=$N_0008 )
+V_V27           V27(+=$N_0005 -=0 )
+X_U2            U2(G1=$N_0009 INN=0 INP=$N_0006 GND=0 OUT=$N_0002 VS=$N_0010
++  BYP=$N_0007 G8=$N_0011 )
+R_RV2a          RV2a(1=$N_0006 2=$N_0008 )
+R_RV2b          RV2b(1=0 2=$N_0006 )
+C_C7            C7(1=$N_0009 2=$N_0011 )
+V_Bat1          Bat1(+=$N_0010 -=0 )
+R_LS1           LS1(1=0 2=$N_0003 )
+.ENDALIASES
+
+
+**** RESUMING "FM amp(1) (1).cir" ****
+.probe
+
+
+.END
+
+**** 11/13/118 16:50:44 ******** NT Evaluation PSpice (July 1997) ************
+
+ * \\homefs03\home\zo12\Praxis\FM amp(1) (1).sch
+
+
+ ****     BJT MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U2.ddnpn      X_U2.ddpnp      
+               NPN             PNP             
+          IS   10.000000E-15   10.000000E-15 
+          BF  400             200            
+          NF    1               1            
+         VAF  100             100            
+          BR    1               1            
+          NR    1               1            
+         VAR  100             100            
+         CJE    5.000000E-12    5.000000E-12 
+         MJE     .3333           .3333       
+         CJC    2.000000E-12    2.000000E-12 
+         MJC     .3333           .3333       
+          TF    1.000000E-09    1.000000E-09 
+         VTF   10              10            
+         ITF    1               1            
+          TR   10.000000E-09   10.000000E-09 
+         XTB    1.5             1.5          
+
+
+**** 11/13/118 16:50:44 ******** NT Evaluation PSpice (July 1997) ************
+
+ * \\homefs03\home\zo12\Praxis\FM amp(1) (1).sch
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+($N_0001)    0.0000                   ($N_0002)    5.9769                       
+
+($N_0003)    0.0000                   ($N_0004) 30.76E-06                       
+
+($N_0005)    0.0000                   ($N_0006) 30.76E-06                       
+
+($N_0007)    5.0522                   ($N_0008) 30.76E-06                       
+
+($N_0009)    1.1056                   ($N_0010)    9.0000                       
+
+($N_0011)    1.1045                   (X_U2.10001)    6.6807                    
+
+(X_U2.10002)    6.6869                (X_U2.10004)    6.6869                    
+
+(X_U2.10006)    5.2669                (X_U2.10007)    5.2669                    
+
+(X_U2.10008)    1.1044                (X_U2.10011)     .4837                    
+
+(X_U2.10012)     .4843                (X_U2.10013)     .6206                    
+
+(X_U2.10014)     .6816                (X_U2.10017)    5.2807                
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V27        0.000E+00
+    V_Bat1      -2.940E-03
+    X_U2.V_f1   -8.895E-07
+    X_U2.v1     -8.895E-07
+    X_U2.v2      2.900E-03
+    X_U2.V_f2    1.968E-06
+    X_U2.v3     -1.968E-06
+
+    TOTAL POWER DISSIPATION   2.24E-02  WATTS
+
+
+
+          JOB CONCLUDED
+
+          TOTAL JOB TIME           10.58
+
